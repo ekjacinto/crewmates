@@ -37,6 +37,7 @@ const Create = () => {
     } else {
       console.log("Character inserted successfully", data);
       alert("Character created successfully!");
+      window.location.href = "/view";
     }
   };
 

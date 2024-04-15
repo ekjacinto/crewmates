@@ -20,6 +20,7 @@ const Edit = () => {
   const [name, setName] = useState("");
   const [itemsCollected, setItemsCollected] = useState("");
   const [suitStyle, setSuitStyle] = useState("");
+  const [formAction, setFormAction] = useState("");
 
   useEffect(() => {
     const getCharacter = async () => {
@@ -46,20 +47,36 @@ const Edit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { data, error } = await supabase
-      .from("Character")
-      .update({
-        name: name,
-        items: itemsCollected,
-        suit: suitStyle,
-      })
-      .eq("id", id);
+    if (formAction === "update") {
+      const { data, error } = await supabase
+        .from("Character")
+        .update({
+          name: name,
+          items: itemsCollected,
+          suit: suitStyle,
+        })
+        .eq("id", id);
 
-    if (error) {
-      console.log("Error inserting character", error);
-    } else {
-      console.log("Character inserted successfully", data);
-      alert("Character updated successfully!");
+      if (error) {
+        console.log("Error inserting character", error);
+      } else {
+        console.log("Character inserted successfully", data);
+        alert("Character updated successfully!");
+        window.location.href = "/view";
+      }
+    } else if (formAction === "delete") {
+      const { data, error } = await supabase
+        .from("Character")
+        .delete()
+        .eq("id", id);
+
+      if (error) {
+        console.log("Error deleting character", error);
+      } else {
+        console.log("Character deleted successfully", data);
+        alert("Character deleted successfully!");
+        window.location.href = "/view";
+      }
     }
   };
 
@@ -213,18 +230,22 @@ const Edit = () => {
             />
           </div>
         </div>
-        <button
-          type="submit"
-          className="w-84 bg-black text-3xl mt-8 p-4 rounded-md border-2 border-white"
-        >
-          Update Character
-        </button>
-        <button
-          type="submit"
-          className="w-84 bg-black text-3xl mt-8 p-4 rounded-md border-2 border-white"
-        >
-          Delete Character
-        </button>
+        <div className="flex justify-center gap-4">
+          <button
+            type="submit"
+            onClick={() => setFormAction("update")}
+            className="w-84 bg-black text-3xl mt-8 p-4 rounded-md border-2 border-white"
+          >
+            Update Character
+          </button>
+          <button
+            type="submit"
+            onClick={() => setFormAction("delete")}
+            className="w-84 bg-black text-3xl mt-8 p-4 rounded-md border-2 border-white"
+          >
+            Delete Character
+          </button>
+        </div>
       </form>
     </div>
   );

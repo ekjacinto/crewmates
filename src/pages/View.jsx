@@ -40,7 +40,7 @@ const View = () => {
           <div className="grid grid-cols-3 gap-12">
             {characters.map((character) => (
               <Link
-                to={`${character.id}`}
+                to={`/view/${character.id}`}
                 key={character.id}
                 className={`bg-[#201c1c] p-4 rounded-md flex flex-col items-center border-2 border-white shadow-lg ${
                   character.suit === "Bee"
