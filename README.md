@@ -29,6 +29,8 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
+![crewmates](https://github.com/ekjacinto/crewmates/assets/109046831/b8f53549-b3ad-461b-9421-e4cb18657d52)
+
 Here's a walkthrough of implemented user stories:
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
