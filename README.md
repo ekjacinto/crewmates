@@ -29,7 +29,7 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-![crewmates](https://github.com/ekjacinto/crewmates/assets/109046831/b8f53549-b3ad-461b-9421-e4cb18657d52)
+![updatedcrewmates](https://github.com/ekjacinto/crewmates/assets/109046831/070aec19-30d7-4216-b2c3-d3c49d6cb630)
 
 Here's a walkthrough of implemented user stories:
 
