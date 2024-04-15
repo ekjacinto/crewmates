@@ -48,7 +48,7 @@ const Character = () => {
           <div className="flex flex-col items-center">
             {character && (
               <div
-                className={`bg-[#201c1c] p-4 rounded-md flex flex-col items-center border-2 border-white shadow-lg ${
+                className={`bg-[#201c1c] p-4 rounded-md flex flex-col items-center border-2 border-white shadow-2xl ${
                   character.suit === "Bee"
                     ? "shadow-yellow-700"
                     : character.suit === "Bunny"
