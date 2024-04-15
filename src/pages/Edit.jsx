@@ -219,6 +219,12 @@ const Edit = () => {
         >
           Update Character
         </button>
+        <button
+          type="submit"
+          className="w-84 bg-black text-3xl mt-8 p-4 rounded-md border-2 border-white"
+        >
+          Delete Character
+        </button>
       </form>
     </div>
   );
